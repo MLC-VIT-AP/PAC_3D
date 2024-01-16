@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://c7oh3wokhvhuc"]
+
+[ext_resource type="Texture2D" uid="uid://dlpqvyg88cnnr" path="res://Textures/Wall_textures/Concrete_Wall_012_basecolor.jpg" id="1_ab4mg"]
+[ext_resource type="Texture2D" uid="uid://dsdlluywp7e5y" path="res://Textures/Wall_textures/Concrete_Wall_012_ambientOcclusion.jpg" id="2_hmvw8"]
+[ext_resource type="Texture2D" uid="uid://ccs2nrm4fbkqi" path="res://Textures/Wall_textures/Concrete_Wall_012_height.png" id="3_6uv5q"]
+[ext_resource type="Texture2D" uid="uid://53as0a0xl5m6" path="res://Textures/Wall_textures/Concrete_Wall_012_normal.jpg" id="4_4ha4f"]
+[ext_resource type="Texture2D" uid="uid://blnlypjg3llsc" path="res://Textures/Wall_textures/Concrete_Wall_012_roughness.jpg" id="5_11um3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_swcrv"]
+albedo_texture = ExtResource("1_ab4mg")
+roughness_texture = ExtResource("5_11um3")
+normal_enabled = true
+normal_texture = ExtResource("4_4ha4f")
+ao_enabled = true
+ao_texture = ExtResource("2_hmvw8")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_6uv5q")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ml14o"]
+material = SubResource("StandardMaterial3D_swcrv")
+size = Vector3(1, 3, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_deavh"]
+size = Vector3(1, 3, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nm8e8"]
+albedo_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+albedo_texture = ExtResource("1_ab4mg")
+roughness_texture = ExtResource("5_11um3")
+normal_enabled = true
+normal_texture = ExtResource("4_4ha4f")
+ao_enabled = true
+ao_texture = ExtResource("2_hmvw8")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_6uv5q")
+
+[sub_resource type="BoxMesh" id="BoxMesh_1hbch"]
+material = SubResource("StandardMaterial3D_nm8e8")
+size = Vector3(1, 3, 4)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Wall_type_1" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ml14o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall_type_1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_type_1/StaticBody3D"]
+shape = SubResource("BoxShape3D_deavh")
+
+[node name="Wall_type_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.49219)
+mesh = SubResource("BoxMesh_1hbch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall_type_2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_type_2/StaticBody3D"]
+shape = SubResource("BoxShape3D_deavh")

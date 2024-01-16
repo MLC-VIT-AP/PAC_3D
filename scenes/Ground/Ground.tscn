@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=3 uid="uid://d4mp885qd12l0"]
+
+[ext_resource type="Texture2D" uid="uid://dtpxx4ltducdn" path="res://Textures/Ground_Textures/Stone_Path_008_basecolor.jpg" id="1_p11gt"]
+[ext_resource type="Texture2D" uid="uid://daj2hwn8ug0sa" path="res://Textures/Ground_Textures/Stone_Path_008_ambientOcclusion.jpg" id="2_huq0p"]
+[ext_resource type="Texture2D" uid="uid://behet21tieber" path="res://Textures/Ground_Textures/Stone_Path_008_height.png" id="3_h5kcu"]
+[ext_resource type="Texture2D" uid="uid://nued26dbfyc" path="res://Textures/Ground_Textures/Stone_Path_008_normal.jpg" id="4_vewih"]
+[ext_resource type="Texture2D" uid="uid://bwas6ia0g4muk" path="res://Textures/Ground_Textures/Stone_Path_008_roughness.jpg" id="5_rvpj4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_whv4r"]
+size = Vector3(100, 0.01, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_027au"]
+albedo_texture = ExtResource("1_p11gt")
+roughness_texture = ExtResource("5_rvpj4")
+normal_enabled = true
+normal_texture = ExtResource("4_vewih")
+ao_enabled = true
+ao_light_affect = 0.46
+ao_texture = ExtResource("2_huq0p")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_h5kcu")
+uv1_scale = Vector3(100, 100, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bx6r1"]
+material = SubResource("StandardMaterial3D_027au")
+size = Vector3(100, 0.01, 100)
+
+[node name="Ground" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_whv4r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_bx6r1")

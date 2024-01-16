@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6r1hkpacxat3"]
+
+[ext_resource type="Script" path="res://Splash_Screens/game_over.gd" id="1_c60hu"]
+
+[node name="Game_Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c60hu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0.360784)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -386.0
+offset_top = -129.0
+offset_right = 387.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "You Didn't Survive :("
+
+[node name="Restart_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 445.0
+offset_right = 679.0
+offset_bottom = 536.0
+theme_override_font_sizes/font_size = 60
+text = "Restart"
+
+[connection signal="pressed" from="Restart_button" to="." method="_on_restart_button_pressed"]
