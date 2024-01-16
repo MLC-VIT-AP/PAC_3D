@@ -1,5 +1,4 @@
 # Normalize EOL for all files that Git considers text files.
 * text=auto eol=lf
-Enemy_assets filter=lfs diff=lfs merge=lfs -text
-Enemy_assets !text !filter !merge !diff
 *.glb filter=lfs diff=lfs merge=lfs -text
+Enemy_assets !text !filter !merge !diff
