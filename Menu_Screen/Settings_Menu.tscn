@@ -19,26 +19,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -110.5
-offset_top = -90.5
-offset_right = 110.5
-offset_bottom = 90.5
+offset_left = -110.0
+offset_top = -124.0
+offset_right = 111.0
+offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
 [node name="General_button" type="Button" parent="SettingsMenu1"]
 layout_mode = 2
+size_flags_vertical = 2
 theme_override_font_sizes/font_size = 56
 text = "General"
 
 [node name="Video_button" type="Button" parent="SettingsMenu1"]
 layout_mode = 2
+size_flags_vertical = 2
 theme_override_font_sizes/font_size = 61
 text = "Video"
 
 [node name="MenuReturn_Button" type="Button" parent="SettingsMenu1"]
 layout_mode = 2
+size_flags_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Back"
 
@@ -100,8 +103,67 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "Back"
 
+[node name="Video" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Video"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = -25.0
+offset_right = 231.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tags" type="VBoxContainer" parent="Video/HBoxContainer"]
+layout_mode = 2
+
+[node name="FullScreen" type="Label" parent="Video/HBoxContainer/Tags"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Full Screen"
+
+[node name="Checks" type="VBoxContainer" parent="Video/HBoxContainer"]
+layout_mode = 2
+
+[node name="FullScreen" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+icon_alignment = 1
+expand_icon = true
+
+[node name="BackFVid_Button" type="Button" parent="Video"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_top = -58.0
+offset_right = 46.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 36
+text = "Back
+"
+
 [connection signal="pressed" from="SettingsMenu1/General_button" to="." method="_on_general_button_pressed"]
 [connection signal="pressed" from="SettingsMenu1/Video_button" to="." method="_on_video_button_pressed"]
 [connection signal="pressed" from="SettingsMenu1/MenuReturn_Button" to="." method="_on_menu_return_button_pressed"]
 [connection signal="value_changed" from="General/HBoxContainer/VBoxContainer2/MouseSlider" to="." method="_on_mouse_slider_value_changed"]
 [connection signal="pressed" from="General/BackFGen_Button" to="." method="_on_back_f_gen_button_pressed"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/FullScreen" to="." method="_on_full_screen_toggled"]
+[connection signal="pressed" from="Video/BackFVid_Button" to="." method="_on_back_f_vid_button_pressed"]

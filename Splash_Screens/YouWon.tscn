@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://7kayrnb2gcvu"]
+
+[ext_resource type="Script" path="res://Splash_Screens/YouWon.gd" id="1_tbdq5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tbdq5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.780392, 0.470588, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 92.0
+offset_right = 760.0
+offset_bottom = 202.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.607843)
+theme_override_font_sizes/font_size = 80
+text = "You Won !"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -113.0
+offset_top = -171.0
+offset_right = 113.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Play Again !"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

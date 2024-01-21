@@ -6,9 +6,6 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
-func _process(delta):
-	pass
-
 
 
 func _on_restart_button_pressed():

@@ -37,11 +37,18 @@ theme_override_font_sizes/font_size = 80
 text = "You Didn't Survive :("
 
 [node name="Restart_button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 460.0
-offset_top = 445.0
-offset_right = 679.0
-offset_bottom = 536.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -109.0
+offset_top = -215.0
+offset_right = 110.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_font_sizes/font_size = 60
 text = "Restart"
 

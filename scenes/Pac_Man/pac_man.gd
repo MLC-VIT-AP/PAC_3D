@@ -48,6 +48,6 @@ func _input(event):
 		rotation.y -= event.relative.x*msens
 
 
-func _on_demon_hit_r_body_entered(body):
+func _on_demon_touch_body_entered(body):
 	if body.name == "Pac_Man":
 		get_tree().change_scene_to_file("res://Splash_Screens/game_over.tscn")
