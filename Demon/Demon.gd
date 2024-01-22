@@ -14,8 +14,8 @@ enum States{
 var currentstate: States
 var player = null
 const gravity = 9.8
-const walkspeed = 3
-const runspeed = 7
+const walkspeed = 180
+const runspeed = 320
 var waypointIndex : int
 var playerinhearfar : bool
 var playerinhearclose : bool
@@ -39,20 +39,20 @@ func _process(delta):
 				$PatTimer.start()
 				return
 			$AnimationPlayer.play("Walk")
-			movetwd(delta,walkspeed)
+			movetwd(delta,walkspeed*delta)
 			pass
 		States.chasing:
 			if navagent.is_navigation_finished():
 				$PatTimer.start()
 				currentstate = States.waiting
 			navagent.set_target_position(player.global_transform.origin)
-			movetwd(delta,(runspeed*80))
+			movetwd(delta,(runspeed*delta))
 			pass
 		States.hunting:
 			if navagent.is_navigation_finished():
 				$PatTimer.start()
 				currentstate = States.waiting
-			movetwd(delta,walkspeed)
+			movetwd(delta,walkspeed*delta)
 			pass
 		States.waiting:
 			checkforplayer()
@@ -79,12 +79,12 @@ func checkforplayer():
 		if result["collider"] == player:
 			if playerinhearclose:
 				currentstate = States.chasing
-			if playerinhearfar:
+			elif playerinhearfar:
 				currentstate = States.hunting
 				navagent.set_target_position(player.global_transform.origin)
-			if playerinvisionclose:
+			elif playerinvisionclose:
 				currentstate = States.chasing
-			if playerinvisionfar:
+			elif playerinvisionfar:
 				currentstate = States.hunting
 				navagent.set_target_position(player.global_transform.origin)
 
