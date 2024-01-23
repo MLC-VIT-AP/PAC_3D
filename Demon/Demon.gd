@@ -14,8 +14,8 @@ enum States{
 var currentstate: States
 var player = null
 const gravity = 9.8
-const walkspeed = 180
-const runspeed = 320
+const walkspeed = 160
+const runspeed = 300
 var waypointIndex : int
 var playerinhearfar : bool
 var playerinhearclose : bool
@@ -77,14 +77,14 @@ func checkforplayer():
 	var result = space_state.intersect_ray(PhysicsRayQueryParameters3D.create($Head.global_position,player.get_node("MainCam").global_position,1,[self]))
 	if result.size()>0:
 		if result["collider"] == player:
-			if playerinhearclose:
+			if playerinvisionclose:
 				currentstate = States.chasing
-			elif playerinhearfar:
-				currentstate = States.hunting
-				navagent.set_target_position(player.global_transform.origin)
-			elif playerinvisionclose:
+			elif playerinhearclose and player.velocity:
 				currentstate = States.chasing
 			elif playerinvisionfar:
+				currentstate = States.hunting
+				navagent.set_target_position(player.global_transform.origin)
+			elif playerinhearfar and player.velocity and (not Input.is_action_pressed("slow_down")):
 				currentstate = States.hunting
 				navagent.set_target_position(player.global_transform.origin)
 
