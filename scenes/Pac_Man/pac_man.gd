@@ -29,6 +29,8 @@ func _physics_process(delta):
 	#Handle horizontal-movement
 	if is_on_floor():
 		if direction:
+			if (not $Walk.is_playing()) and (not Input.is_action_pressed("slow_down")):
+				$Walk.play()
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
 		else :
