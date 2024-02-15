@@ -7,12 +7,16 @@ const DECELERATION_FACTOR = 0.5
 var gravity = GlobalVariables.gravity
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	pass
 	
 func _physics_process(delta):
 	var SPEED = delta*350
 	var input_dir = Input.get_vector("left", "right", "front", "back") 
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	#mouse capture
+	if !GlobalVariables.paused:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	#Add gravity.
 	if not is_on_floor():
@@ -29,7 +33,7 @@ func _physics_process(delta):
 	#Handle horizontal-movement
 	if is_on_floor():
 		if direction:
-			if (not $Walk.is_playing()) and (not Input.is_action_pressed("slow_down")):
+			if (not $Walk.is_playing()) and (not Input.is_action_pressed("slow_down")) and velocity:
 				$Walk.play()
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
@@ -44,10 +48,11 @@ func _physics_process(delta):
 
 func _input(event):
 	#RotationMechanics
-	if event is InputEventMouseMotion:
-		rotation.x -= event.relative.y*msens
-		rotation.x = clamp(rotation.x,deg_to_rad(-80),deg_to_rad(90))
-		rotation.y -= event.relative.x*msens
+	if !GlobalVariables.paused:
+		if event is InputEventMouseMotion:
+			rotation.x -= event.relative.y*msens
+			rotation.x = clamp(rotation.x,deg_to_rad(-80),deg_to_rad(90))
+			rotation.y -= event.relative.x*msens
 
 
 func _on_demon_touch_body_entered(body):

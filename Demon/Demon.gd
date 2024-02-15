@@ -14,8 +14,8 @@ enum States{
 var currentstate: States
 var player = null
 const gravity = 9.8
-const walkspeed = 160
-const runspeed = 300
+const walkspeed = 100
+const runspeed = 280
 var waypointIndex : int
 var playerinhearfar : bool
 var playerinhearclose : bool
@@ -39,6 +39,8 @@ func _process(delta):
 				$PatTimer.start()
 				return
 			$AnimationPlayer.play("Walk")
+			if (not $Walksound.is_playing()):
+				$Walksound.play()
 			movetwd(delta,walkspeed*delta)
 			pass
 		States.chasing:
@@ -57,6 +59,8 @@ func _process(delta):
 		States.waiting:
 			checkforplayer()
 			$AnimationPlayer.play("Idle")
+			if (not $IdleSound.is_playing()) or (not $Walksound.is_playing()):
+				$IdleSound.play()
 			pass
 
 	
@@ -79,6 +83,8 @@ func checkforplayer():
 		if result["collider"] == player:
 			if playerinvisionclose:
 				currentstate = States.chasing
+				if (not $RunSound.is_playing()):
+					$RunSound.play()
 			elif playerinhearclose and player.velocity:
 				currentstate = States.chasing
 			elif playerinvisionfar:
@@ -125,6 +131,8 @@ func _on_hearing_close_body_exited(body):
 	if body == player:
 		playerinhearclose = false
 		$AnimationPlayer.play("Walk")
+		if (not $Walksound.is_playing()):
+				$Walksound.play()
 	pass # Replace with function body.
 
 
