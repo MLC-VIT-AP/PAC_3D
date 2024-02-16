@@ -6,9 +6,7 @@ const DECELERATION_FACTOR = 0.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = GlobalVariables.gravity
 
-func _ready():
-	pass
-	
+
 func _physics_process(delta):
 	var SPEED = delta*350
 	var input_dir = Input.get_vector("left", "right", "front", "back") 

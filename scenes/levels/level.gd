@@ -10,7 +10,7 @@ func _process(delta):
 
 func pause_menu():
 	if GlobalVariables.paused:
-		$PauseMenu.hide()  
+		$PauseMenu.hide()
 		Engine.time_scale = 1
 	else:
 		$PauseMenu.show()

@@ -6,10 +6,14 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
+func _on_play_again_pressed():
+	get_tree().change_scene_to_file("res://Menu_Screen/Start_Menu.tscn")
 
 
-func _on_button_pressed():
+func _on_quit_pressed():
+	get_tree().quit()
+
+
+func _on_main_menu_pressed():
 	get_tree().change_scene_to_file("res://Menu_Screen/Start_Menu.tscn")

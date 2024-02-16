@@ -25,7 +25,7 @@ func _on_quit_button_pressed():
 
 
 func _on_main_menu_f_pressed():
-	get_tree().change_scene_to_file("res://.godot/exported/133200997/export-e40f4a1de8cc35a616930da505ebe6cf-Start_Menu.scn")
+	get_tree().change_scene_to_file("res://Menu_Screen/Start_Menu.tscn")
 
 func _on_quit_f_pressed():
 	get_tree().quit()
