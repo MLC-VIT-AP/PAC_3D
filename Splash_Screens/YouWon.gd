@@ -8,7 +8,7 @@ func _ready():
 
 
 func _on_play_again_pressed():
-	get_tree().change_scene_to_file("res://Menu_Screen/Start_Menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/level.tscn")
 
 
 func _on_quit_pressed():

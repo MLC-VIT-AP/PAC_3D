@@ -9,4 +9,4 @@ func _ready():
 
 
 func _on_restart_button_pressed():
-	get_tree().change_scene_to_file("res://Menu_Screen/Start_Menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/level.tscn")
