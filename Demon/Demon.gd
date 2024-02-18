@@ -24,7 +24,7 @@ var playerinvisionclose : bool
 
 
 func _ready():
-	navagent.set_target_position(waypoints[0].global_position)
+	navagent.set_target_position(waypoints[(randi() %5)].global_position)
 	player = get_node(player_path)
 func _process(delta):
 	#Gravity
@@ -72,9 +72,8 @@ func movetwd(delta, speed):
 	move_and_slide()
 	if playerinhearfar:
 		checkforplayer()
-	
-	#print(position)
 
+	#print(position)
 
 func checkforplayer():
 	var space_state = get_world_3d().direct_space_state
@@ -100,9 +99,7 @@ func faceDirection(direction : Vector3):
 
 func _on_pat_timer_timeout():
 	currentstate = States.patrol
-	waypointIndex += 1
-	if waypointIndex > waypoints.size()-1:
-		waypointIndex = 0
+	waypointIndex = randi() %5
 	navagent.set_target_position(waypoints[waypointIndex].global_position)
 	
 	pass # Replace with function body.
