@@ -25,6 +25,8 @@ func _on_quit_button_pressed():
 
 
 func _on_main_menu_f_pressed():
+	Engine.time_scale = 1
+	GlobalVariables.paused = false
 	get_tree().change_scene_to_file("res://Menu_Screen/Start_Menu.tscn")
 
 func _on_quit_f_pressed():

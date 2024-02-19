@@ -42,26 +42,22 @@ func _process(delta):
 			if (not $Walksound.is_playing()):
 				$Walksound.play()
 			movetwd(delta,walkspeed*delta)
-			pass
 		States.chasing:
 			if navagent.is_navigation_finished():
 				$PatTimer.start()
 				currentstate = States.waiting
 			navagent.set_target_position(player.global_transform.origin)
 			movetwd(delta,(runspeed*delta))
-			pass
 		States.hunting:
 			if navagent.is_navigation_finished():
 				$PatTimer.start()
 				currentstate = States.waiting
 			movetwd(delta,walkspeed*delta)
-			pass
 		States.waiting:
 			checkforplayer()
 			$AnimationPlayer.play("Idle")
 			if (not $IdleSound.is_playing()) or (not $Walksound.is_playing()):
 				$IdleSound.play()
-			pass
 
 	
 func movetwd(delta, speed):

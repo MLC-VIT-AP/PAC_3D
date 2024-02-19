@@ -1,8 +1,8 @@
 shader_type canvas_item;
 
-uniform float radius;
 
 void fragment() {
+	float radius = 1.0;
 	vec2 center = vec2(0.5,0.5);
 	vec2 coords = (UV-center);
 	float dist = length(coords);
