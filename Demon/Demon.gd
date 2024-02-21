@@ -14,8 +14,8 @@ enum States{
 var currentstate: States
 var player = null
 const gravity = 9.8
-const walkspeed = 100
-const runspeed = 280
+var walkspeed = GlobalVariables.demon_walk_speed
+var runspeed = GlobalVariables.demon_run_speed
 var waypointIndex : int
 var playerinhearfar : bool
 var playerinhearclose : bool
@@ -55,6 +55,7 @@ func _process(delta):
 			movetwd(delta,walkspeed*delta)
 		States.waiting:
 			checkforplayer()
+			$AnimationPlayer.stop()
 			$AnimationPlayer.play("Idle")
 			if (not $IdleSound.is_playing()) or (not $Walksound.is_playing()):
 				$IdleSound.play()
@@ -115,6 +116,8 @@ func _on_hearing_far_body_exited(body):
 
 func _on_hearing_close_body_entered(body):
 	if body == player:
+		if not($AnimationPlayer.is_playing() and $AnimationPlayer.current_animation == "Fastjumpover"):
+			$AnimationPlayer.stop()
 		$AnimationPlayer.play("Run")
 		playerinhearclose = true
 	pass # Replace with function body.
@@ -151,3 +154,4 @@ func _on_vision_close_body_exited(body):
 	if body == player:
 		playerinvisionclose = false
 	pass # Replace with function body.
+

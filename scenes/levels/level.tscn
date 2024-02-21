@@ -310,14 +310,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.8377, 0, 44.9831)
 [node name="Coin" parent="COINS_COLLECTION/Coins" instance=ExtResource("7_xkqjl")]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0.657355, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins/Coin"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1.31471)
 light_energy = 4.01
 light_indirect_energy = 3.693
 light_volumetric_fog_energy = 4.01
 light_size = 0.05
 light_bake_mode = 1
-spot_angle = 7.57
+spot_range = 0.93065
+spot_angle = 27.0321
 
 [node name="Coins2" type="Node3D" parent="COINS_COLLECTION"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.65914, 0, 24.4264)
@@ -325,14 +326,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.65914, 0, 24.4264)
 [node name="Coin" parent="COINS_COLLECTION/Coins2" instance=ExtResource("7_xkqjl")]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0.657355, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins2/Coin"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1.31471)
 light_energy = 4.01
 light_indirect_energy = 3.693
 light_volumetric_fog_energy = 4.01
 light_size = 0.05
 light_bake_mode = 1
-spot_angle = 7.57
+spot_range = 0.936653
+spot_angle = 29.6559
 
 [node name="Coins3" type="Node3D" parent="COINS_COLLECTION"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9868, 0, 23.5596)
@@ -340,14 +342,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9868, 0, 23.5596)
 [node name="Coin" parent="COINS_COLLECTION/Coins3" instance=ExtResource("7_xkqjl")]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0.657355, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins3"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins3/Coin"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1.31471)
 light_energy = 4.01
 light_indirect_energy = 3.693
 light_volumetric_fog_energy = 4.01
 light_size = 0.05
 light_bake_mode = 1
-spot_angle = 7.57
+spot_range = 0.884843
+spot_angle = 31.4555
 
 [node name="Coins4" type="Node3D" parent="COINS_COLLECTION"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.0854, 0, 32.5996)
@@ -355,14 +358,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.0854, 0, 32.5996)
 [node name="Coin" parent="COINS_COLLECTION/Coins4" instance=ExtResource("7_xkqjl")]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0.657355, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins4"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins4/Coin"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1.31471)
 light_energy = 4.01
 light_indirect_energy = 3.693
 light_volumetric_fog_energy = 4.01
 light_size = 0.05
 light_bake_mode = 1
-spot_angle = 7.57
+spot_range = 0.943591
+spot_angle = 25.3911
 
 [node name="Coins5" type="Node3D" parent="COINS_COLLECTION"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.746, 0, 11.4671)
@@ -370,14 +374,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.746, 0, 11.4671)
 [node name="Coin" parent="COINS_COLLECTION/Coins5" instance=ExtResource("7_xkqjl")]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0.657355, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins5"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins5/Coin"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1.31471)
 light_energy = 4.01
 light_indirect_energy = 3.693
 light_volumetric_fog_energy = 4.01
 light_size = 0.05
 light_bake_mode = 1
-spot_angle = 7.57
+spot_range = 1.10641
+spot_angle = 30.2338
 
 [node name="Coins6" type="Node3D" parent="COINS_COLLECTION"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5646, 0, -13.9881)
@@ -385,14 +390,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5646, 0, -13.9881)
 [node name="Coin" parent="COINS_COLLECTION/Coins6" instance=ExtResource("7_xkqjl")]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0.657355, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins6"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins6/Coin"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1.31471)
 light_energy = 4.01
 light_indirect_energy = 3.693
 light_volumetric_fog_energy = 4.01
 light_size = 0.05
 light_bake_mode = 1
-spot_angle = 7.57
+spot_range = 1.02838
+spot_angle = 29.5312
 
 [node name="Coins7" type="Node3D" parent="COINS_COLLECTION"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9284, 0, -13.9881)
@@ -400,14 +406,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9284, 0, -13.9881)
 [node name="Coin" parent="COINS_COLLECTION/Coins7" instance=ExtResource("7_xkqjl")]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0.657355, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins7"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins7/Coin"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1.31471)
 light_energy = 4.01
 light_indirect_energy = 3.693
 light_volumetric_fog_energy = 4.01
 light_size = 0.05
 light_bake_mode = 1
-spot_angle = 7.57
+spot_range = 1.02242
+spot_angle = 36.8724
 
 [node name="Coins8" type="Node3D" parent="COINS_COLLECTION"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.69392, 0, -25.4429)
@@ -415,14 +422,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.69392, 0, -25.4429)
 [node name="Coin" parent="COINS_COLLECTION/Coins8" instance=ExtResource("7_xkqjl")]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0.657355, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins8"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins8/Coin"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1.31471)
 light_energy = 4.01
 light_indirect_energy = 3.693
 light_volumetric_fog_energy = 4.01
 light_size = 0.05
 light_bake_mode = 1
-spot_angle = 7.57
+spot_range = 0.937157
+spot_angle = 24.9372
 
 [node name="Coins9" type="Node3D" parent="COINS_COLLECTION"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.8377, 0, -45.8071)
@@ -430,14 +438,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.8377, 0, -45.8071)
 [node name="Coin" parent="COINS_COLLECTION/Coins9" instance=ExtResource("7_xkqjl")]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0.657355, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins9"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins9/Coin"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1.31471)
 light_energy = 4.01
 light_indirect_energy = 3.693
 light_volumetric_fog_energy = 4.01
 light_size = 0.05
 light_bake_mode = 1
-spot_angle = 7.57
+spot_range = 0.86684
+spot_angle = 35.9487
 
 [node name="Coins10" type="Node3D" parent="COINS_COLLECTION"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.8377, 0, 26.316)
@@ -445,14 +454,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.8377, 0, 26.316)
 [node name="Coin" parent="COINS_COLLECTION/Coins10" instance=ExtResource("7_xkqjl")]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0.657355, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins10"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="COINS_COLLECTION/Coins10/Coin"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 1.31471)
 light_energy = 4.01
 light_indirect_energy = 3.693
 light_volumetric_fog_energy = 4.01
 light_size = 0.05
 light_bake_mode = 1
-spot_angle = 7.57
+spot_range = 0.948443
+spot_angle = 26.4664
 
 [node name="Stat_Disp" type="Control" parent="."]
 layout_mode = 3
@@ -507,6 +517,7 @@ theme_override_font_sizes/font_size = 50
 text = "X"
 
 [node name="RADAR_MINIMAP" type="TextureRect" parent="Stat_Disp"]
+layout_mode = 0
 offset_right = 341.0
 offset_bottom = 342.0
 scale = Vector2(0.667, 0.667)
@@ -528,7 +539,7 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -2, 0)
 cull_mask = 1047554
 projection = 1
-size = 20.0
+size = 30.0
 script = ExtResource("12_634t3")
 
 [node name="PlayerRadarSprite" type="Sprite3D" parent="Stat_Disp/RADAR_MINIMAP/SubViewportContainer/SubViewport/RADARCAM"]
