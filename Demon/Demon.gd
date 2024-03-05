@@ -24,7 +24,7 @@ var playerinvisionclose : bool
 
 
 func _ready():
-	navagent.set_target_position(waypoints[(randi() %5)].global_position)
+	navagent.set_target_position(waypoints[0].global_position)
 	player = get_node(player_path)
 func _process(delta):
 	#Gravity

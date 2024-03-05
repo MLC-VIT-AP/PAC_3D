@@ -16,13 +16,14 @@ ao_texture = ExtResource("2_hmvw8")
 ao_texture_channel = 4
 heightmap_enabled = true
 heightmap_texture = ExtResource("3_6uv5q")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_ml14o"]
+lightmap_size_hint = Vector2i(14, 21)
 material = SubResource("StandardMaterial3D_swcrv")
-size = Vector3(1, 1, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_deavh"]
-size = Vector3(1, 1, 4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nm8e8"]
 albedo_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
@@ -35,10 +36,11 @@ ao_texture = ExtResource("2_hmvw8")
 ao_texture_channel = 4
 heightmap_enabled = true
 heightmap_texture = ExtResource("3_6uv5q")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_1hbch"]
 material = SubResource("StandardMaterial3D_nm8e8")
-size = Vector3(1, 1, 4)
 
 [node name="Node3D" type="Node3D"]
 

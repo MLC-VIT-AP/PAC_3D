@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd16mkyennvvg"]
+[gd_scene load_steps=6 format=3 uid="uid://dd16mkyennvvg"]
 
 [ext_resource type="Script" path="res://scenes/coin/coin.gd" id="1_xg3xv"]
+[ext_resource type="Texture2D" uid="uid://blv8pmnwurfdd" path="res://scenes/coin/COIN_MAP_SPRITE.png" id="2_apjay"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_csba2"]
 albedo_color = Color(1, 0.545098, 0, 1)
@@ -29,5 +30,10 @@ shape = SubResource("CylinderShape3D_d6fh8")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.666, 0, 0, 0, 0.666, 0, 0, 0, 0.666, 0, 0, 10)
+layers = 2
+texture = ExtResource("2_apjay")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://t1gp4lhqwk7w"]
+[gd_scene load_steps=3 format=3 uid="uid://t1gp4lhqwk7w"]
 
 [ext_resource type="Script" path="res://Menu_Screen/Settings_Menu.gd" id="1_qb2dt"]
+[ext_resource type="Texture2D" uid="uid://hqfyo2fniswg" path="res://Image_Assets/Settings_Img.png" id="2_ob71p"]
 
 [node name="SettingsNode" type="Control"]
 process_mode = 1
@@ -11,6 +12,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qb2dt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ob71p")
 
 [node name="SettingsMenu1" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -30,19 +40,19 @@ alignment = 1
 [node name="General_button" type="Button" parent="SettingsMenu1"]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 60
 text = "General"
 
 [node name="Video_button" type="Button" parent="SettingsMenu1"]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_font_sizes/font_size = 61
+theme_override_font_sizes/font_size = 60
 text = "Video"
 
 [node name="MenuReturn_Button" type="Button" parent="SettingsMenu1"]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 60
 text = "Back"
 
 [node name="General" type="Control" parent="."]
@@ -76,7 +86,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Mouse Senstivity"
 
-[node name="Label" type="Label" parent="General/HBoxContainer/VBoxContainer"]
+[node name="DifficultyL" type="Label" parent="General/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Difficulty"
@@ -135,6 +145,7 @@ offset_right = 231.0
 offset_bottom = 77.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
 [node name="Tags" type="VBoxContainer" parent="Video/HBoxContainer"]
 layout_mode = 2
@@ -148,6 +159,7 @@ text = "Full Screen"
 
 [node name="Checks" type="VBoxContainer" parent="Video/HBoxContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="FullScreen" type="CheckBox" parent="Video/HBoxContainer/Checks"]
 custom_minimum_size = Vector2(36, 36)

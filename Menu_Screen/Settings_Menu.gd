@@ -2,6 +2,11 @@ extends Control
 
 func _ready():
 	diff_items()
+	GlobalVariables.hurdelsExist = false
+	GlobalVariables.hideRADAR = false
+	GlobalVariables.demon_walk_speed = 80
+	GlobalVariables.demon_run_speed = 250
+
 
 func diff_items():
 	var difmen = $General/HBoxContainer/VBoxContainer2/DifficultyS
@@ -9,6 +14,7 @@ func diff_items():
 	difmen.add_item("Medium")
 	difmen.add_item("Hard")
 	difmen.add_item("Very Hard")
+	difmen.add_item("Impossible")
 
 func toggle():
 	visible = !visible
@@ -41,7 +47,8 @@ func _on_back_f_vid_button_pressed():
 func _on_full_screen_toggled(toggled_on):
 	if toggled_on == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-
+	elif toggled_on == false:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func _on_difficulty_s_item_selected(index):
 	if index == 0:
@@ -51,8 +58,16 @@ func _on_difficulty_s_item_selected(index):
 		GlobalVariables.demon_walk_speed = 100
 		GlobalVariables.demon_run_speed = 280
 	elif index == 2:
-		GlobalVariables.demon_walk_speed = 110
-		GlobalVariables.demon_run_speed = 310
+		GlobalVariables.demon_walk_speed = 100
+		GlobalVariables.demon_run_speed = 280
+		GlobalVariables.hurdelsExist = true
 	elif index == 3:
+		GlobalVariables.demon_walk_speed = 110
+		GlobalVariables.demon_run_speed = 300
+		GlobalVariables.hurdelsExist = true
+		GlobalVariables.hideRADAR = true
+	elif index == 4:
 		GlobalVariables.demon_walk_speed = 125
 		GlobalVariables.demon_run_speed = 320
+		GlobalVariables.hurdelsExist = true
+		GlobalVariables.hideRADAR = true

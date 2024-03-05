@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvryvyhhib4t3"]
+[gd_scene load_steps=3 format=3 uid="uid://cvryvyhhib4t3"]
 
 [ext_resource type="Script" path="res://Menu_Screen/Start_Menu.gd" id="1_ovqlk"]
+[ext_resource type="Texture2D" uid="uid://q1yw3g77dmp4" path="res://Image_Assets/MainMenu_Img.png" id="2_wsui6"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -19,11 +20,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+[node name="Background" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
-color = Color(0.207843, 0.247059, 0.388235, 1)
+texture = ExtResource("2_wsui6")
+expand_mode = 1
 
-[node name="Label" type="Label" parent="MarginContainer/ColorRect"]
+[node name="Label" type="Label" parent="MarginContainer/Background"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

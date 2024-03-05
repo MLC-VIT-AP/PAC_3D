@@ -18,9 +18,12 @@ script = ExtResource("1_uyavh")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_c4aty")
-layout_mode = 2
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -54,106 +57,94 @@ text = "QUIT"
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ToMainMenu"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -122.0
-offset_top = 394.0
-offset_right = 122.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MainMenuF" type="Button" parent="MarginContainer/ToMainMenu/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "MAIN MENU"
-
-[node name="ReturnM" type="Button" parent="MarginContainer/ToMainMenu/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "BACK"
-
-[node name="ARS" type="Label" parent="MarginContainer/ToMainMenu"]
+[node name="VBoxContainer1" type="VBoxContainer" parent="MarginContainer/ToMainMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -167.0
-offset_right = 20.0
-offset_bottom = -98.0
+offset_left = -153.5
+offset_top = -108.0
+offset_right = 153.5
+offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ToMainMenu/VBoxContainer1"]
+layout_mode = 2
+
+[node name="ARS" type="Label" parent="MarginContainer/ToMainMenu/VBoxContainer1/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "ARE YOU SURE ?"
 
-[node name="INF" type="Label" parent="MarginContainer/ToMainMenu"]
-layout_mode = 0
-offset_left = 426.0
-offset_top = 224.0
-offset_right = 723.0
-offset_bottom = 247.0
+[node name="INF" type="Label" parent="MarginContainer/ToMainMenu/VBoxContainer1/VBoxContainer"]
+layout_mode = 2
 text = "YOU WILL LOOSE ALL YOUR PROGRESS"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/ToMainMenu/VBoxContainer1"]
+layout_mode = 2
+
+[node name="MainMenuF" type="Button" parent="MarginContainer/ToMainMenu/VBoxContainer1/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "MAIN MENU"
+
+[node name="ReturnM" type="Button" parent="MarginContainer/ToMainMenu/VBoxContainer1/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "BACK"
 
 [node name="ToQuit" type="Control" parent="MarginContainer"]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ToQuit"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -105.0
-offset_top = 396.0
-offset_right = 106.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="QuitF" type="Button" parent="MarginContainer/ToQuit/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "QUIT"
-
-[node name="ReturnQ" type="Button" parent="MarginContainer/ToQuit/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "     BACK     "
-
-[node name="ARS" type="Label" parent="MarginContainer/ToQuit"]
+[node name="VBoxContainer1" type="VBoxContainer" parent="MarginContainer/ToQuit"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -62.0
-offset_top = -167.0
-offset_right = 62.0
-offset_bottom = -98.0
+offset_left = -153.5
+offset_top = -108.0
+offset_right = 153.5
+offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/ToQuit/VBoxContainer1"]
+layout_mode = 2
+
+[node name="ARS" type="Label" parent="MarginContainer/ToQuit/VBoxContainer1/VBoxContainer2"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "ARE YOU SURE ?"
 
-[node name="INF" type="Label" parent="MarginContainer/ToQuit"]
-layout_mode = 0
-offset_left = 428.0
-offset_top = 224.0
-offset_right = 725.0
-offset_bottom = 247.0
+[node name="INF" type="Label" parent="MarginContainer/ToQuit/VBoxContainer1/VBoxContainer2"]
+layout_mode = 2
 text = "YOU WILL LOOSE ALL YOUR PROGRESS"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/ToQuit/VBoxContainer1"]
+layout_mode = 2
+
+[node name="QuitF" type="Button" parent="MarginContainer/ToQuit/VBoxContainer1/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "QUIT"
+
+[node name="ReturnQ" type="Button" parent="MarginContainer/ToQuit/VBoxContainer1/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "     BACK     "
 
 [connection signal="pressed" from="MarginContainer/Pasuemain/Resume_button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Pasuemain/MainMenu_button" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Pasuemain/Quit_button" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="MarginContainer/ToMainMenu/VBoxContainer/MainMenuF" to="." method="_on_main_menu_f_pressed"]
-[connection signal="pressed" from="MarginContainer/ToMainMenu/VBoxContainer/ReturnM" to="." method="_on_return_m_pressed"]
-[connection signal="pressed" from="MarginContainer/ToQuit/VBoxContainer/QuitF" to="." method="_on_quit_f_pressed"]
-[connection signal="pressed" from="MarginContainer/ToQuit/VBoxContainer/ReturnQ" to="." method="_on_return_q_pressed"]
+[connection signal="pressed" from="MarginContainer/ToMainMenu/VBoxContainer1/VBoxContainer2/MainMenuF" to="." method="_on_main_menu_f_pressed"]
+[connection signal="pressed" from="MarginContainer/ToMainMenu/VBoxContainer1/VBoxContainer2/ReturnM" to="." method="_on_return_m_pressed"]
+[connection signal="pressed" from="MarginContainer/ToQuit/VBoxContainer1/VBoxContainer3/QuitF" to="." method="_on_quit_f_pressed"]
+[connection signal="pressed" from="MarginContainer/ToQuit/VBoxContainer1/VBoxContainer3/ReturnQ" to="." method="_on_return_q_pressed"]
