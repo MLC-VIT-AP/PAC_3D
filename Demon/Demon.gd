@@ -15,7 +15,7 @@ var currentstate: States
 var player = null
 const gravity = 9.8
 var walkspeed = GlobalVariables.demon_walk_speed
-var runspeed = GlobalVariables.demon_run_speed
+var runspeed = GlobalVariables.demon_run_speed*2
 var waypointIndex : int
 var playerinhearfar : bool
 var playerinhearclose : bool
